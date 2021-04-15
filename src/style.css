@@ -11,6 +11,11 @@ ol, ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .header {
   padding: 1rem 0;
   background-color: #2978b5;
@@ -25,15 +30,20 @@ ol, ul {
 
 .card {
   border: 1px solid #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 20px;
+  height: 100%;
   background-color: #8ab6d6;
 }
 .card__image-container {
   height: 60%;
 }
 .card__image {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .card__details {
   display: flex;
@@ -57,6 +67,39 @@ ol, ul {
   font-size: 1.2rem;
 }
 
+.specs-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.specs-list__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.specs-list__list {
+  list-style-type: disc;
+  margin: 0.5rem 0 0 0.5rem;
+}
+.specs-list__list > * {
+  margin-bottom: 0.1rem;
+}
+
+.error {
+  margin: 2rem;
+  border: #1c1c1c;
+  border-radius: 20px;
+  background-color: #f05945;
+  padding: 2rem 4rem;
+}
+.error__title {
+  font-size: 1.3rem;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.error__message {
+  color: #FFFFFF;
+}
+
 .list {
   width: 100%;
   box-sizing: border-box;
@@ -66,9 +109,58 @@ ol, ul {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (min-width: 1024px) {
   .list {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  grid-template-areas: "name name" "image specs" "description description";
+  padding: 1rem;
+}
+.details__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details__name {
+  grid-area: name;
+}
+.details__image-container {
+  grid-area: image;
+  display: flex;
+}
+.details__image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.details__specs-list {
+  grid-area: specs;
+  justify-content: center;
+}
+.details__description-container {
+  grid-area: description;
+}
+.details__description-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .details {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "name name name name" "image specs specs specs" "image description description .";
   }
 }
 body {

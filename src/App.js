@@ -7,7 +7,7 @@ export default function App() {
     <Router>
       <Header />
       <Route exact path="/" component={Home} />
-      <Route path="/details" component={Details} />
+      <Route path="/phones/:id" component={Details} />
     </Router>
   );
 }

@@ -6,7 +6,7 @@ const usePhones = () => {
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    useState(() => {
+    useEffect(() => {
         (async () => {
             try {
                 const phones = await retrievePhones()
