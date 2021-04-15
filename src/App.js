@@ -6,8 +6,8 @@ export default function App() {
   return (
     <Router>
       <Header />
+      <Route exact path="/" component={Home} />
       <Route path="/details" component={Details} />
-      <Route path="/home" component={Home} />
     </Router>
   );
 }
