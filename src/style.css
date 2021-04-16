@@ -100,7 +100,12 @@ a {
   color: #FFFFFF;
 }
 
-.list {
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home__list {
   width: 100%;
   box-sizing: border-box;
   padding: 1rem;
@@ -109,14 +114,8 @@ a {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media screen and (min-width: 1024px) {
-  .list {
+  .home__list {
     grid-template-columns: repeat(4, 1fr);
   }
 }

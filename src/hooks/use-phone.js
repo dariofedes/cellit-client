@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react'
 import { retrievePhoneDetails } from '../logic'
 
-const usePhone = (href) => {
-    if(typeof href !== 'string') throw new TypeError(`href ${href} is not a string`);
-    if(
-        href.split('/').length !== 3 ||
-        href.split('/')[1] !== 'phones'
-    ) throw new Error(`href ${href} is not a valid href`)
+const usePhone = (phoneId) => {
+    if(typeof phoneId !== 'string') throw new TypeError(`id ${phoneId} is not a string`);
 
     const [phone, setPhone] = useState(null)
     const [error, setError] = useState(null)
@@ -15,7 +11,7 @@ const usePhone = (href) => {
     useEffect(() => {
         (async () => {
             try {
-                const phone = await retrievePhoneDetails(href)
+                const phone = await retrievePhoneDetails(phoneId)
                 
                 setPhone(phone)
                 setLoading(false)

@@ -3,8 +3,8 @@ import { usePhone } from '../../hooks'
 import Loader from 'react-loader-spinner'
 import { SpecsList, Error } from '../../components'
 
-export default function Details({ match: { url: href, params: { id: phoneId } } }) {
-    const { phone, error, loading } = usePhone(href)
+export default function Details({ match: { params: { id: phoneId } } }) {
+    const { phone, error, loading } = usePhone(phoneId)
 
     return (
         <div className="details__container">
