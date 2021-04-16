@@ -11,7 +11,7 @@ export default function Home() {
         <div className="home">
             <Loader visible={loading} />
             {phones && <ul className="home__list">
-                {phones.map(phone => <Link to={phone.href}><PhoneCard phone={phone} /></Link>)}
+                {phones.map(phone => <Link to={`/phones/${phone.id}`}><PhoneCard phone={phone} /></Link>)}
             </ul>}
             {error && <Error message={error.message} />}
         </div>
