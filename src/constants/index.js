@@ -1,4 +1,4 @@
-const API_URL = 'http://192.168.0.10:8080'
+const API_URL = 'https://cellit.herokuapp.com'
 
 export {
     API_URL
