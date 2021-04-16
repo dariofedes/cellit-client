@@ -1,7 +1,9 @@
 # Cellit! - Client
 
 ## Introduction
-An SPA that shows a list of mobile devices. On clicking in one of them, it shows a view with more details about it. 
+An SPA that shows a list of mobile devices. On clicking in one of them, it shows a view with more details about it.
+
+You can visit it deployed at [`https://cellit.surge.sh`](cellit.surge.sh)
 
 ## How to run it
 
